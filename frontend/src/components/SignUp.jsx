@@ -12,7 +12,7 @@ function Signup() {
 
   const handleSubmit = () => {
     axios
-      .post('http://localhost:3000/signup', {
+      .post('react-components-neon.vercel.app/signup', {
         userName,
         userEmail,
         userPassword,
