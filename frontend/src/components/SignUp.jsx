@@ -11,6 +11,7 @@ function Signup() {
   const [userPassword, setUserPassword] = useState('')
 
   const handleSubmit = () => {
+    axios.defaults.withCredentials = true;
     axios
       .post('react-components-neon.vercel.app/signup', {
         userName,
