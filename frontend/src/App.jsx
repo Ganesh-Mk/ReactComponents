@@ -1,8 +1,9 @@
 import { PrimeReactProvider } from 'primereact/api'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Login from './components/Login'
-import Signup from './components/SignUp'
 import Navbar from './components/Navbar'
+import Home from './components/Home'
+import Features from './components/Features'
+import Products from './components/Products'
 
 function App() {
   return (
@@ -10,9 +11,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/projects" element={<Products />} />
         </Routes>
       </Router>
     </PrimeReactProvider>

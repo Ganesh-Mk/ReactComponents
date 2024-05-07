@@ -1,0 +1,14 @@
+.custom-button {
+  /* Default styling for desktop */
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .custom-button {
+    font-size: 3vw;
+    padding: 3vw 1vw;
+    padding-right: 3vw;
+  }
+}

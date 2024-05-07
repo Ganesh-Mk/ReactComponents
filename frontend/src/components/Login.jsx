@@ -3,7 +3,6 @@ import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog'
 import { InputText } from 'primereact/inputtext'
 import axios from 'axios'
-import '../styles/Login.css'
 
 function Login() {
   const [visible, setVisible] = useState(false)
@@ -21,6 +20,7 @@ function Login() {
     <div className="loginContainer">
       <div className="card flex justify-content-center">
         <Button
+          className="custom-button"
           label="Login"
           icon="pi pi-user"
           onClick={() => setVisible(true)}

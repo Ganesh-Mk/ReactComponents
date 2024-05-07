@@ -3,6 +3,10 @@ import { Menubar } from 'primereact/menubar'
 import { InputText } from 'primereact/inputtext'
 import { Badge } from 'primereact/badge'
 import { Avatar } from 'primereact/avatar'
+import { Link } from 'react-router-dom'
+import SignUp from './SignUp'
+import '../styles/Button.css'
+import Login from './Login'
 
 function Navbar() {
   const itemRenderer = (item) => (
@@ -19,63 +23,34 @@ function Navbar() {
   )
   const items = [
     {
-      label: 'Home',
+      label: (
+        <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
+          Home
+        </Link>
+      ),
       icon: 'pi pi-home',
     },
     {
-      label: 'Features',
+      label: (
+        <Link
+          to="/features"
+          style={{ color: 'inherit', textDecoration: 'none' }}
+        >
+          Features
+        </Link>
+      ),
       icon: 'pi pi-star',
     },
     {
-      label: 'Projects',
+      label: (
+        <Link
+          to="/projects"
+          style={{ color: 'inherit', textDecoration: 'none' }}
+        >
+          Projects
+        </Link>
+      ),
       icon: 'pi pi-search',
-      items: [
-        {
-          label: 'Core',
-          icon: 'pi pi-bolt',
-          shortcut: '⌘+S',
-          template: itemRenderer,
-        },
-        {
-          label: 'Blocks',
-          icon: 'pi pi-server',
-          shortcut: '⌘+B',
-          template: itemRenderer,
-        },
-        {
-          label: 'UI Kit',
-          icon: 'pi pi-pencil',
-          shortcut: '⌘+U',
-          template: itemRenderer,
-        },
-        {
-          separator: true,
-        },
-        {
-          label: 'Templates',
-          icon: 'pi pi-palette',
-          items: [
-            {
-              label: 'Apollo',
-              icon: 'pi pi-palette',
-              badge: 2,
-              template: itemRenderer,
-            },
-            {
-              label: 'Ultima',
-              icon: 'pi pi-palette',
-              badge: 3,
-              template: itemRenderer,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      label: 'Contact',
-      icon: 'pi pi-envelope',
-      badge: 3,
-      template: itemRenderer,
     },
   ]
 
@@ -94,10 +69,12 @@ function Navbar() {
         type="text"
         className="w-8rem sm:w-auto"
       />
-      <Avatar
+      {/* <Avatar
         image="https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png"
         shape="circle"
-      />
+      /> */}
+      <SignUp />
+      <Login />
     </div>
   )
   return (
