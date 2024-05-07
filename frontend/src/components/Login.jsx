@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = () => {
     axios.defaults.withCredentials = true;
     axios
-      .post('react-components-neon.vercel.app/login', { userEmail, userPassword })
+      .post('react-components-omega-jet.vercel.app/login', { userEmail, userPassword })
       .then((result) => console.log(result))
       .catch((err) => console.log(err))
   }
