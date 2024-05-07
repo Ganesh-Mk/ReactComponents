@@ -14,7 +14,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1001',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
@@ -26,7 +26,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1002',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
@@ -38,7 +38,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1003',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
@@ -50,7 +50,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1004',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
@@ -62,7 +62,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1005',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
@@ -74,7 +74,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1006',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
@@ -86,7 +86,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1007',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
@@ -98,7 +98,7 @@ const ProductService = {
         rating: 5,
       },
       {
-        id: '1000',
+        id: '1009',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
         description: 'Product Description',
