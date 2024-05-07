@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://react-components-primereact.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
