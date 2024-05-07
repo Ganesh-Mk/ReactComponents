@@ -16,7 +16,7 @@ app.use(
 
 mongoose
   .connect(
-    "mongodb+srv://ganeshmk247:ganeshpass@loginpage.e48olbw.mongodb.net/LoginDataBase?retryWrites=true&w=majority&appName=LoginPage"
+    "mongodb+srv://ganeshmk247:reactComponentsPass@cluster0.viigpec.mongodb.net/ReactComponentsDB?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
     console.log("MongoDB connected");
