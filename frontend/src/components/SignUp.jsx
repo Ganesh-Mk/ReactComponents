@@ -13,7 +13,7 @@ function Signup() {
   const handleSubmit = () => {
     axios.defaults.withCredentials = true;
     axios
-      .post('react-components-c9cawnpi4-ganeshs-projects-1e9ccdae.vercel.app/signup', {
+      .post('https://react-components-omega-jet.vercel.app/signup', {
         userName,
         userEmail,
         userPassword,
