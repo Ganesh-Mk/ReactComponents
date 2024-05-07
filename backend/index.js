@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["react-components-9eoh-fx1fys4ym-ganeshs-projects-1e9ccdae.vercel.app"],
+    origin: ["https://react-components-9eoh.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
