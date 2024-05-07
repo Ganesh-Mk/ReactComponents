@@ -6,15 +6,23 @@ const UserModel = require("./models/userModel");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/LoginDataBase")
+  .connect(
+    "mongodb+srv://ganeshmk247:ganeshpass@loginpage.e48olbw.mongodb.net/LoginDataBase?retryWrites=true&w=majority&appName=LoginPage"
+  )
   .then(() => {
     console.log("MongoDB connected");
   })
   .catch((err) => {
-    console.log("MongoDB not connected");
+    console.log("MongoDB not connected: " + err);
   });
 
 app.get("/", (req, res) => {
