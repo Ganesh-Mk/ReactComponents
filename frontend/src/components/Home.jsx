@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import { ProductService } from '../service/ProductService'
-import { Button } from 'primereact/button'
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview'
-import { Rating } from 'primereact/rating'
-import { Tag } from 'primereact/tag'
-import { classNames } from 'primereact/utils'
+import React, { useState, useEffect } from "react";
+import { ProductService } from "../service/ProductService";
+import { Button } from "primereact/button";
+import { DataView, DataViewLayoutOptions } from "primereact/dataview";
+import { Rating } from "primereact/rating";
+import { Tag } from "primereact/tag";
+import { classNames } from "primereact/utils";
 
 function Home() {
-  const [products, setProducts] = useState([])
-  const [layout, setLayout] = useState('grid')
+  const [products, setProducts] = useState([]);
+  const [layout, setLayout] = useState("grid");
 
   useEffect(() => {
-    ProductService.getProducts().then((data) => setProducts(data.slice(0, 12)))
-  }, [])
+    ProductService.getProducts().then((data) => setProducts(data.slice(0, 12)));
+  }, []);
 
   const getSeverity = (product) => {
     switch (product.inventoryStatus) {
-      case 'INSTOCK':
-        return 'success'
+      case "INSTOCK":
+        return "success";
 
-      case 'LOWSTOCK':
-        return 'warning'
+      case "LOWSTOCK":
+        return "warning";
 
-      case 'OUTOFSTOCK':
-        return 'danger'
+      case "OUTOFSTOCK":
+        return "danger";
 
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   const listItem = (product, index) => {
     return (
       <div className="col-12" key={product.id}>
         <div
           className={classNames(
-            'flex flex-column xl:flex-row xl:align-items-start p-4 gap-4',
-            { 'border-top-1 surface-border': index !== 0 },
+            "flex flex-column xl:flex-row xl:align-items-start p-4 gap-4",
+            { "border-top-1 surface-border": index !== 0 }
           )}
         >
           <img
@@ -64,14 +64,14 @@ function Home() {
               <Button
                 icon="pi pi-shopping-cart"
                 className="p-button-rounded"
-                disabled={product.inventoryStatus === 'OUTOFSTOCK'}
+                disabled={product.inventoryStatus === "OUTOFSTOCK"}
               ></Button>
             </div>
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const gridItem = (product) => {
     return (
@@ -101,30 +101,30 @@ function Home() {
             <Button
               icon="pi pi-shopping-cart"
               className="p-button-rounded"
-              disabled={product.inventoryStatus === 'OUTOFSTOCK'}
+              disabled={product.inventoryStatus === "OUTOFSTOCK"}
             ></Button>
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   const itemTemplate = (product, layout, index) => {
     if (!product) {
-      return
+      return;
     }
 
-    if (layout === 'list') return listItem(product, index)
-    else if (layout === 'grid') return gridItem(product)
-  }
+    if (layout === "list") return listItem(product, index);
+    else if (layout === "grid") return gridItem(product);
+  };
 
   const listTemplate = (products, layout) => {
     return (
       <div className="grid grid-nogutter">
         {products.map((product, index) => itemTemplate(product, layout, index))}
       </div>
-    )
-  }
+    );
+  };
 
   const header = () => {
     return (
@@ -134,8 +134,8 @@ function Home() {
           onChange={(e) => setLayout(e.value)}
         />
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="card">
@@ -146,7 +146,7 @@ function Home() {
         header={header()}
       />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
