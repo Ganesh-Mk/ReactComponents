@@ -7,15 +7,16 @@ import '../styles/Login.css'
 
 function Login() {
   const [visible, setVisible] = useState(false)
-  const [userName, setUserName] = useState('')
+  const [userEmail, setUserEmail] = useState('')
   const [userPassword, setUserPassword] = useState('')
 
   const handleSubmit = () => {
     axios
-      .post('', { userName, userPassword })
+      .post('http://localhost:3000/login', { userEmail, userPassword })
       .then((result) => console.log(result))
       .catch((err) => console.log(err))
   }
+
   return (
     <div className="loginContainer">
       <div className="card flex justify-content-center">
@@ -40,31 +41,31 @@ function Login() {
               <h1 style={{ textAlign: 'center', color: 'white' }}>Log in</h1>
               <div className="inline-flex flex-column gap-2">
                 <label
-                  htmlFor="username"
+                  htmlFor="useremail"
                   className="text-primary-50 font-semibold"
                 >
                   Enter email
                 </label>
                 <InputText
-                  id="username"
-                  label="Username"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
+                  id="useremail"
+                  label="useremail"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                   className="bg-white-alpha-20 border-none p-3 text-primary-50"
                 ></InputText>
               </div>
               <div className="inline-flex flex-column gap-2">
                 <label
-                  htmlFor="username"
+                  htmlFor="userpassword"
                   className="text-primary-50 font-semibold"
                 >
                   Enter password
                 </label>
                 <InputText
-                  id="password"
+                  id="userpassword"
                   value={userPassword}
                   onChange={(e) => setUserPassword(e.target.value)}
-                  label="Password"
+                  label="userpassword"
                   className="bg-white-alpha-20 border-none p-3 text-primary-50"
                   type="password"
                 ></InputText>

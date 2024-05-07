@@ -1,11 +1,26 @@
 import React, { useState } from 'react'
 import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog'
+import axios from 'axios'
 import { InputText } from 'primereact/inputtext'
 import '../styles/Signup.css'
 
 function Signup() {
   const [visible, setVisible] = useState(false)
+  const [userName, setUserName] = useState('')
+  const [userEmail, setUserEmail] = useState('')
+  const [userPassword, setUserPassword] = useState('')
+
+  const handleSubmit = () => {
+    axios
+      .post('http://localhost:3000/signup', {
+        userName,
+        userEmail,
+        userPassword,
+      })
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err))
+  }
 
   return (
     <div className="signupContainer">
@@ -38,6 +53,8 @@ function Signup() {
                 </label>
                 <InputText
                   id="username"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
                   label="Username"
                   className="bg-white-alpha-20 border-none p-3 text-primary-50"
                 ></InputText>
@@ -50,6 +67,8 @@ function Signup() {
                   Enter email
                 </label>
                 <InputText
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                   id="useremail"
                   label="Useremail"
                   className="bg-white-alpha-20 border-none p-3 text-primary-50"
@@ -64,6 +83,8 @@ function Signup() {
                 </label>
                 <InputText
                   id="password"
+                  value={userPassword}
+                  onChange={(e) => setUserPassword(e.target.value)}
                   label="Password"
                   className="bg-white-alpha-20 border-none p-3 text-primary-50"
                   type="password"
@@ -72,7 +93,7 @@ function Signup() {
               <div className="flex align-items-center gap-2">
                 <Button
                   label="Submit"
-                  onClick={(e) => hide(e)}
+                  onClick={handleSubmit}
                   text
                   className="p-3 w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"
                 ></Button>
